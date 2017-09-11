@@ -12,7 +12,7 @@ export class SearchName implements PipeTransform {
 
 		return users.filter(user => {
 			if (user.name) {
-				return user.name.indexOf(name) > -1;
+				return user.name.toLowerCase().indexOf(name.toLowerCase()) > -1;
 			}
 			return false;
 		})
