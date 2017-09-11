@@ -1,12 +1,15 @@
 <h2>My Heroes</h2>
 <div>
+  <label>Search by name:</label> <input #searchName (keyup)="searchByName(searchName.value)" placeholder="search" />
+</div>
+<div>
   <label>Hero name:</label> <input #heroName />
   <button (click)="add(heroName.value); heroName.value=''">
     Add
   </button>
 </div>
 <ul class="heroes">
-  <li *ngFor="let hero of heroes"
+  <li *ngFor="let hero of (heroes | searchName:name)"
   [class.selected]="hero === selectedHero"
   (click)="onSelect(hero)">
     <span class="badge">{{hero._id}}</span>

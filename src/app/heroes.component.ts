@@ -12,6 +12,7 @@ import { Router }   from '@angular/router';
 export class HeroesComponent implements OnInit {
   heroes: Hero[];
   selectedHero: Hero;
+  name:string = "";
 
   constructor(
     private router: Router,
@@ -49,5 +50,9 @@ export class HeroesComponent implements OnInit {
             this.heroes = this.heroes.filter(h => h !== hero);
             if (this.selectedHero === hero) { this.selectedHero = null; }
         });
+    }
+
+    searchByName(name: string): void {
+      this.name = name;
     }
 }

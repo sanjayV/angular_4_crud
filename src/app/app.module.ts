@@ -9,6 +9,7 @@ import { DashboardComponent } from './dashboard.component';
 import { HeroesComponent } from './heroes.component';
 import { HeroDetailComponent } from './hero-detail.component';
 import { HeroService } from './hero.service';
+import { SearchName } from './search-name.pipe';
 
 import { AppRoutingModule }     from './app-routing.module';
 
@@ -17,7 +18,8 @@ import { AppRoutingModule }     from './app-routing.module';
     AppComponent,
     HeroDetailComponent,
     HeroesComponent,
-    DashboardComponent
+    DashboardComponent,
+    SearchName
   ],
   imports: [
     BrowserModule,
